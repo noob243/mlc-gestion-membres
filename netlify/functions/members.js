@@ -1,11 +1,13 @@
 import { createClient } from '@supabase/supabase-js';
 
 // Initialiser Supabase avec les variables d'environnement
-const supabaseUrl = process.env.VITE_SUPABASE_URL;
-const supabaseAnonKey = process.env.VITE_SUPABASE_ANON_KEY;
+const supabaseUrl = process.env.SUPABASE_URL;
+const supabaseAnonKey = process.env.SUPABASE_ANON_KEY;
 
 if (!supabaseUrl || !supabaseAnonKey) {
-    console.error('Variables d\'environnement Supabase manquantes');
+    console.error('❌ Erreur CRITIQUE: Variables d\'environnement Supabase manquantes dans Netlify!');
+    console.error('SUPABASE_URL:', supabaseUrl);
+    console.error('SUPABASE_ANON_KEY:', supabaseAnonKey);
 }
 
 const supabase = createClient(supabaseUrl, supabaseAnonKey);
