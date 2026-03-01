@@ -1,0 +1,10 @@
+{
+  "name": "MLC-Gestion-Membres",
+  "short_name": "MLC Manager",
+  "description": "Système de gestion centralisé des membres du MLC (Mouvement de Libération du Congo). Enrôlement biométrique, QR Codes et Cartes PVC Haute Sécurité.",
+  "version": "1.0.0",
+  "author": "MLC IT Department",
+  "requestFramePermissions": [
+    "camera"
+  ]
+}

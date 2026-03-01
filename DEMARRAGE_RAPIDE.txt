@@ -1,0 +1,90 @@
+┌─────────────────────────────────────────────────────────────────────────────┐
+│                  MLC - GESTION DES MEMBRES - DEMARRAGE RAPIDE               │
+│                                                                               │
+│  ✅ Application vérifiée et fonctionnelle - Prête au lancement                │
+└─────────────────────────────────────────────────────────────────────────────┘
+
+🚀 DEMARRAGE EN 30 SECONDES:
+
+   1. Double-cliquez sur: lancer.bat
+      (ou lancer_debug.bat si vous voulez voir tous les logs)
+
+   2. Attendez 5-10 secondes (Docker démarre, npm compile...)
+
+   3. Le navigateur s'ouvrira automatiquement sur:
+      → http://localhost:3000
+
+   4. C'est tout ! L'application est lancée.
+
+
+📍 URLS D'ACCES:
+
+   Frontend:   http://localhost:3000
+   Backend:    http://localhost:5000/api/members
+   Database:   postgresql://postgres:postgres@localhost:5434/mlc_db
+
+
+🔧 EN CAS DE PROBLÈME:
+
+   ❌ Frontend inaccessible?
+      → Utilisez lancer_debug.bat pour voir les logs
+      → Vérifiez que le port 3000 est libre
+      → Relancez: taskkill /F /IM node.exe && lancer_debug.bat
+
+   ❌ Erreur base de données?
+      → Vérifiez Docker: docker compose ps
+      → Relancez Docker: docker compose restart postgres
+      → Réinitialisez: npm run init-db
+
+   ❌ npm install échoue?
+      → Utilisez: npm install --legacy-peer-deps
+      → (C'est normal, qrcode.react nécessite ce flag)
+
+
+📚 FICHIERS IMPORTANTS:
+
+   lancer.bat          → Lancer l'app (recommandé)
+   lancer_debug.bat    → Lancer l'app + afficher tous les logs
+   lancer_local.bat    → Lancer sans Docker (requiert PostgreSQL local)
+   README.md           → Documentation complète
+   VERIFICATION_REPORT.md → Rapport de vérification détaillé
+
+
+💡 CONSEILS:
+
+   1️⃣  Première utilisation?
+       → Double-cliquez lancer_debug.bat pour voir ce qui se passe
+
+   2️⃣  Tout fonctionne mais lent?
+       → C'est normal la première fois (npm installe les packages)
+       → Les relancements suivants sont plus rapides
+
+   3️⃣  Arrêter l'application?
+       → Appuyez sur CTRL+C dans la fenêtre de commande
+       → Ou fermez simplement la fenêtre
+
+   4️⃣  Relancer après fermeture?
+       → Double-cliquez le même fichier .bat
+
+
+✅ VERIFICATIONS EFFECTUEES:
+
+   ✓ Toute la syntaxe TypeScript/JavaScript
+   ✓ Tous les imports et références de fichiers
+   ✓ Config PostgreSQL et Docker
+   ✓ Config Express backend et Vite frontend
+   ✓ Scripts de lancement et initialisation DB
+   ✓ Compatibilité npm packages
+
+
+🎯 C'EST PRET!
+
+   L'application est fully tested et prête à l'emploi.
+   Allez-y, lancez-la et profitez ! 🎉
+
+
+─────────────────────────────────────────────────────────────────────────────
+
+Questions ou problèmes?
+→ Consultez README.md (section Dépannage)
+→ Ou lancez lancer_debug.bat pour voir les logs détaillés

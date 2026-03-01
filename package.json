@@ -1,0 +1,39 @@
+{
+  "name": "mlc-gestion-membres",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "dev:local": "concurrently \"vite\" \"nodemon server/index.js\"",
+    "server": "nodemon server/index.js",
+    "start": "concurrently \"npm run dev\" \"npm run server\"",
+    "init-db": "node server/init.js",
+    "build": "vite build",
+    "preview": "vite preview",
+    "lint": "tsc --noEmit",
+    "netlify": "netlify dev",
+    "netlify:build": "vite build && netlify deploy --prod"
+  },
+  "dependencies": {
+    "react": "^19.2.3",
+    "react-dom": "^19.2.3",
+    "lucide-react": "0.460.0",
+    "qrcode.react": "4.1.0",
+    "@supabase/supabase-js": "^2.40.0",
+    "express": "^4.21.1",
+    "pg": "^8.13.1",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5"
+  },
+  "devDependencies": {
+    "@types/node": "^22.14.0",
+    "@vitejs/plugin-react": "^5.0.0",
+    "@netlify/functions": "^2.4.0",
+    "netlify-cli": "^17.0.0",
+    "typescript": "~5.8.2",
+    "vite": "^6.2.0",
+    "nodemon": "^3.1.7",
+    "concurrently": "^9.1.0"
+  }
+}

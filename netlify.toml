@@ -1,0 +1,61 @@
+# Netlify Configuration pour MLC Gestion des Membres
+
+[build]
+  # Répertoire source
+  base = "."
+  
+  # Répertoire de build frontend
+  publish = "dist"
+  
+  # Commande de build
+  command = "npm run build"
+  
+  # Fonctions serverless
+  functions = "netlify/functions"
+
+# Redirects pour SPA React
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+
+# En-têtes HTTP
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Content-Type-Options = "nosniff"
+    X-Frame-Options = "DENY"
+    X-XSS-Protection = "1; mode=block"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+
+[[headers]]
+  for = "/*.js"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/*.css"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+# Contextes de build (optionnel, pour différents environnements)
+[context.production]
+  command = "npm run build"
+  publish = "dist"
+
+[context.deploy-preview]
+  command = "npm run build"
+  
+[context.branch-deploy]
+  command = "npm run build"
+
+# Variables d'environnement
+# À configurer dans Netlify Dashboard → Site settings → Build & deploy → Environment
+[env]
+  VITE_SUPABASE_URL = ""
+  VITE_SUPABASE_ANON_KEY = ""
+
+# Configuration des Netlify Functions
+[functions]
+  directory = "netlify/functions"
+  node_bundler = "esbuild"
