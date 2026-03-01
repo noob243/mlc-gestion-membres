@@ -1,7 +1,7 @@
 
 import React, { useState, useRef, useEffect } from 'react';
 import { Member } from '../types';
-import { QRCodeSVG } from 'qrcode.react';
+import QRCode from 'react-qr-code';
 import { UserPlus, Download, User, RotateCcw, ShieldCheck, Copy, ScanLine, IdCard } from 'lucide-react';
 
 interface RegistrationAppProps {
@@ -305,7 +305,7 @@ const RegistrationApp: React.FC<RegistrationAppProps> = ({ onAddMember }) => {
                   </div>
 
                   <div className="bg-white p-6 rounded-[2rem] shadow-[0_0_50px_rgba(255,255,255,0.1)]" ref={qrRef}>
-                    <QRCodeSVG
+                    <QRCode
                       value={lastRegistered.id}
                       size={200}
                       level="H"

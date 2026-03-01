@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 import { Member } from '../types';
 import { Search, QrCode, CreditCard, Printer, UserCircle, X, ShieldCheck, MapPin, Phone, Loader2, Download, Lock, CalendarCheck, AlertTriangle } from 'lucide-react';
-import { QRCodeSVG } from 'qrcode.react';
+import QRCode from 'react-qr-code';
 
 interface CardGeneratorAppProps {
   members: Member[];
@@ -249,7 +249,7 @@ const CardGeneratorApp: React.FC<CardGeneratorAppProps> = ({ members }) => {
                       <div className="flex gap-4 items-center flex-1 px-1 overflow-hidden">
                         <div className="flex flex-col items-center gap-1 flex-shrink-0">
                           <div className="bg-white p-1.5 rounded-lg shadow-sm border border-blue-500">
-                            <QRCodeSVG value={selectedMember.id} size={54} level="H" />
+                            <QRCode value={selectedMember.id} size={54} level="H" />
                           </div>
                           <div className="flex items-center gap-1 opacity-90">
                             <Lock size={4} className="text-yellow-400" />
