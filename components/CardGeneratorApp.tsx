@@ -15,7 +15,7 @@ const CardGeneratorApp: React.FC<CardGeneratorAppProps> = ({ members }) => {
   const [printingStatus, setPrintingStatus] = useState<string | null>(null);
   const [showConfirmModal, setShowConfirmModal] = useState<{ show: boolean, type: 'print' | 'download' }>({ show: false, type: 'print' });
 
-  const officialLogoUrl = "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Flag_of_the_Movement_for_the_Liberation_of_the_Congo.svg/1200px-Flag_of_the_Movement_for_the_Liberation_of_the_Congo.svg.png";
+  const officialLogoUrl = "https://upload.wikimedia.org/wikipedia/fr/7/78/MLC_Congo_Logo.gif";
 
   const filteredMembers = members.filter(m =>
     m.id.toLowerCase().includes(searchTerm.toLowerCase()) ||
@@ -171,8 +171,8 @@ const CardGeneratorApp: React.FC<CardGeneratorAppProps> = ({ members }) => {
                         <div className="flex items-center gap-2">
                           <img src={officialLogoUrl} alt="Logo" className="h-8 w-auto object-contain" />
                           <div className="border-l border-slate-200 pl-2">
-                            <h1 className="text-[10px] font-black tracking-tighter text-blue-700 leading-none">MOUVEMENT DE LIBÉRATION</h1>
-                            <p className="text-[8px] font-black text-yellow-600 uppercase leading-none mt-0.5">DU CONGO (MLC)</p>
+                            <h1 className="text-[10px] font-black tracking-tighter text-blue-700 leading-none">MOUVEMENT  DE  LIBÉRATION  DU  CONGO</h1>
+                            <p className="text-[8px] font-black text-yellow-600 uppercase leading-none mt-0.5">(MLC)</p>
                           </div>
                         </div>
                         <div className="text-right">
