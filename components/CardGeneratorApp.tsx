@@ -243,7 +243,7 @@ const CardGeneratorApp: React.FC<CardGeneratorAppProps> = ({ members }) => {
                     <div className="relative z-10 h-full flex flex-col">
                       <div className="flex justify-between items-center mb-3 border-b border-blue-600/50 pb-1">
                         <h4 className="text-[7px] font-black uppercase text-yellow-400 tracking-widest">INFOS COMPLÉMENTAIRES</h4>
-                        <img src={officialLogoUrl} alt="Mini Logo" className="h-3 w-auto brightness-0 invert opacity-50" />
+                        <img src="https://upload.wikimedia.org/wikipedia/fr/7/78/MLC_Congo_Logo.gif" alt="Mini Logo" className="h-3 w-auto brightness-0 invert opacity-50" />
                       </div>
 
                       <div className="flex gap-4 items-center flex-1 px-1 overflow-hidden">
